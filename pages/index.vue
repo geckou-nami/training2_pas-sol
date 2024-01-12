@@ -6,6 +6,7 @@
   <SectionHero />
   <SubHero />
   <SectionAbout />
+  <SectionFooter />
 </template>
 
 
