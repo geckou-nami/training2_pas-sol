@@ -6,6 +6,12 @@
   <SectionHero />
   <SubHero />
   <SectionAbout />
+  <SubHero />
+  <SectionProduct />
+  <SubHero />
+  <SectionNews />
+  <SectionFooter />
+  <SectionContact />
   <SectionFooter />
 </template>
 
