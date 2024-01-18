@@ -1,56 +1,53 @@
 <script lang="ts" setup>
+import imgSrc from '@/assets/images/5aafae338835b1fd1119f273565bd3de1.jpg';
 
+type Props = {
+  newsList: {
+    image: string,
+    title: string,
+    date : string,
+    text : string,
+    link : string
+  }[]
+}
+
+const props = defineProps<Props>()
 </script>
 
 <template>
+  <SubHero :imageSrc="imgSrc"/>
   <SectionContainer>
-    <div :class="$style.news_container">
-      <SectionTitle />
-      <div :class="$style.news_article_wrapper">
-        <div :class="$style.image_box">
-          <img src="~assets/images/news/sekaiisan_tabibitonokoe.jpg" alt="記事の関連写真" :class="$style.news_img">
-        </div>
-        <div :class="$style.news_article">
-          <h3 :class="$style.news_title">365ヶ所の「旅人の声」を集めます！世界遺産フォトグラファーとつくる『365日 世界遺産 絶景の旅』</h3>
-          <date>2020.9.2</date>
-          <p :class="$style.news_text">こんにちは。TABIPPOの中です。
-            先日、「365絶景シリーズ」の新作、『365日 北海道 絶景の旅』が発売されたばかりではありますが、実は新たな「365絶景シリーズ」の新作の制作がすでに動き出しているんです！
-            今回のテーマは「世界遺産」。写真は、40年間に渡り世界中を駆け回り、世界遺産を中心に空気感のある写真を追求し続けている世界遺産写真家の富井義夫さんのお写真をすべて使用させていただきます。
-          </p>
-        </div>
-      </div>
-      <div :class="$style.news_article_wrapper">
-        <div :class="$style.image_box">
-          <img src="~assets/images/news/sekaiisan_tabibitonokoe.jpg" alt="記事の関連写真" :class="$style.news_img">
-        </div>
-        <div :class="$style.news_article">
-          <h3 :class="$style.news_title">365ヶ所の「旅人の声」を集めます！世界遺産フォトグラファーとつくる『365日 世界遺産 絶景の旅』</h3>
-          <date>2020.9.2</date>
-          <p :class="$style.news_text">こんにちは。TABIPPOの中です。
-            先日、「365絶景シリーズ」の新作、『365日 北海道 絶景の旅』が発売されたばかりではありますが、実は新たな「365絶景シリーズ」の新作の制作がすでに動き出しているんです！
-            今回のテーマは「世界遺産」。写真は、40年間に渡り世界中を駆け回り、世界遺産を中心に空気感のある写真を追求し続けている世界遺産写真家の富井義夫さんのお写真をすべて使用させていただきます。
-          </p>
-        </div>
-      </div>
-      <div :class="$style.news_article_wrapper">
-        <div :class="$style.image_box">
-          <img src="~assets/images/news/sekaiisan_tabibitonokoe.jpg" alt="記事の関連写真" :class="$style.news_img">
-        </div>
-        <div :class="$style.news_article">
-          <h3 :class="$style.news_title">365ヶ所の「旅人の声」を集めます！世界遺産フォトグラファーとつくる『365日 世界遺産 絶景の旅』</h3>
-          <date>2020.9.2</date>
-          <p :class="$style.news_text">こんにちは。TABIPPOの中です。
-            先日、「365絶景シリーズ」の新作、『365日 北海道 絶景の旅』が発売されたばかりではありますが、実は新たな「365絶景シリーズ」の新作の制作がすでに動き出しているんです！
-            今回のテーマは「世界遺産」。写真は、40年間に渡り世界中を駆け回り、世界遺産を中心に空気感のある写真を追求し続けている世界遺産写真家の富井義夫さんのお写真をすべて使用させていただきます。
-          </p>
-        </div>
-      </div>
+    <div :class="$style.section_title_wrap">
+      <SectionTitle sectionName="NEWS"/>
+      <MoreButton />
     </div>
+    <ul :class="$style.news_container">
+      <li 
+        v-for="news in newsList"
+        :key="news.title"
+        :class="$style.news_article_wrapper"
+      >
+        <div :class="$style.image_box">
+          <img 
+            :src="`/images/news/${news.image}`" 
+            alt="記事の関連写真" 
+            :class="$style.news_img"
+          >
+        </div>
+        <div :class="$style.news_article">
+          <h3 :class="$style.news_title">{{ news.title }}</h3>
+          <date>{{ news.date }}</date>
+          <p :class="$style.news_text">{{ news.text }}</p>
+        </div>
+      </li>
+    </ul>
+    <BackToButton />
   </SectionContainer>
 </template>
 
 
 <style lang="scss" module>
+@use '~/assets/scss/mixin' as *;
 
 .news_container{
   display       : flex;
@@ -58,15 +55,29 @@
   gap           : calc(var(--sp-large) * 2);
 }
 
+.section_title_wrap {
+  display: flex;
+  align-items: center;
+}
+
 .news_article_wrapper {
   width  : 100%;
   display: flex;
   gap    : var(--sp-large);
+
+  @include mediaScreen('mobile') {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .image_box {
   flex : 0 0 40%;
   width: 40%;
+
+  @include mediaScreen('mobile') {
+    width : 100%;
+  }
 }
 
 .news_img {
@@ -79,6 +90,10 @@
   .news_title {
     font-size     : var(--fs-large);
     letter-spacing: 0.1em;
+
+    @include mediaScreen('mobile') {
+      font-size: var(--fs-larger);
+    }
   }
 
   date {
@@ -95,7 +110,11 @@
     overflow          : hidden;
     display           : -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 7;                   /* 任意の行数を指定 */
+    -webkit-line-clamp: 7; /* 任意の行数を指定 */
+
+    @include mediaScreen('mobile') {
+      display: none;
+    }
   }
 }
 </style>

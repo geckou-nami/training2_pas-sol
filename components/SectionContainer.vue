@@ -11,15 +11,16 @@
 </template>
 
 <style lang="scss" module>
+@use '~/assets/scss/mixin' as *;
 .section_container {
   background-color: var(--base-color);
   width     : 100%;
   min-height: 100dvh;
-  padding   : calc(var(--sp-larger) * 2) calc(var(--sp-large) * 11);
+  padding   : 0 calc(var(--sp-large) * 11);
   margin    : 0 auto;
 
-  /* @include mediaScreen('mobile') {
-    padding: calc(var(--sp-large) * 10) calc(var(--border-margin) * 2);
-  } */
+  @include mediaScreen('tablet') {
+    padding: 0 calc(var(--sp-large) * 2);
+  }
 }
 </style>

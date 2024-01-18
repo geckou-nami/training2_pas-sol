@@ -9,7 +9,7 @@
   --blue: #4871A9 ;
   --lightblue: #70bdd3;
   --skyblue: #2f9bcd;
-  --base-color: var(--white);
+  --base-color: var(--lightgray);
   --main-color: var(--white);
   --text-color: var(--black);
   --light-text-color: var(--light-black);
@@ -29,6 +29,7 @@
   --fs-small: clamp(0.75rem, 0.6178571429rem + 0.2857142857vw, 0.875rem);
   --fs-smaller: clamp(0.6875rem, 0.6214285714rem + 0.1428571429vw, 0.75rem);
   --fs-min: 10px;
+  --fs-about-page: clamp(1.125rem, 0.9928571429rem + 0.2857142857vw, 1.25rem);
   --line-height-tight: 1.12;
   --line-height-narrow: 1.4;
   --line-height-normal: 1.6;
@@ -113,12 +114,8 @@ ul[role=list], ol[role=list], li[role=list], dl[role=list], dt[role=list], dd[ro
 }
 
 a {
-  display: inline-block;
-  color: var(--link-color);
-  fill: var(--link-color);
   text-decoration: none;
-  transition: all 0.1s;
-  cursor: pointer;
+  display: inline-block;
 }
 
 em,

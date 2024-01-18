@@ -20,12 +20,17 @@
 
 
 <style lang="scss" module>
+ @use '~/assets/scss/mixin' as *;
 
 .header_container {
   background-color: transparent;
   display         : flex;
   justify-content : space-between;
   padding         : calc(var(--sp-large) * 1.5) calc(var(--sp-large) * 3.5);
+
+  @include mediaScreen('tablet') {
+    display: none;
+  }
 }
 
 .main_logo {

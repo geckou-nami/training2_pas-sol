@@ -4,10 +4,12 @@
 
 <template>
   <div :class="$style.footer_container">
+    <a href=""><img src="~assets/images/backTop@2x (1).png" alt="上に戻る" :class="$style.back_top_button"></a>
     <div :class="$style.wrapper_1st">
       <a :class="[$style.sns_link, $style.facebook]" href="#">Share on Facebook</a>
       <a :class="[$style.sns_link, $style.twitter]" href="#">Share on twitter</a>
       <a :class="[$style.sns_link, $style.bookmark]" href="#">Hatena Bookmark</a>
+      <a :class="[$style.sns_link, $style.line]" href="#">Send to LINE</a>
     </div>
     <div :class="$style.wrapper_2st">
       <ul :class="$style.footer_menu_list">
@@ -16,19 +18,31 @@
         <li><a href="">ABOUT</a></li>
         <li><a href="">NEWS</a></li>
         <li><a href="">CONTACT</a></li>
-    </ul>
+      </ul>
     </div>
     <div :class="$style.wrapper_3st">
-      <a href="#" :class="$style.footer_logo"><img src="~assets/images/siteLogo-small@2x (1).png" alt="PAL_POL"></a>
+      <a href="#" :class="$style.footer_logo"><img src="~assets/images/siteLogo-small.png" alt="PAL_POL"></a>
       <p :class="$style.copy_right">Copyright © 2024 PAS-POL -旅のモノづくりブランド-｜TABIPPO All rights reserved.</p>
     </div>
   </div>
 </template>
 
 <style lang="scss" module>
-
+@use '~/assets/scss/mixin' as *;
 .footer_container {
+  position: relative;
+  width   : 100%;
+}
 
+.back_top_button {
+  display    : block;
+  width      : 50px;
+  position   : absolute;
+  top        : 25px;
+  left       : 50%;
+  margin-left: -25px;
+  margin-top : -25px;
+  cursor     : pointer;
 }
 
 .wrapper_1st {
@@ -36,8 +50,13 @@
   display         : flex;
   justify-content : center;
   align-items     : center;
-  padding         : calc(var(--sp-large) * 1) 0;
+  padding         : calc(var(--sp-large) * 1.5) 0;
   gap             : var(--sp-large);
+
+  @include mediaScreen('mobile') {
+    flex-wrap: wrap;
+    gap             : var(--sp-medium);
+  }
 }
 
 .wrapper_2st {
@@ -46,14 +65,25 @@
   justify-content : center;
   align-items     : center;
   padding         : calc(var(--sp-large) * 1) 0;
+
+  @include mediaScreen('mobile') {
+    padding       : 0;
+  }
 }
 
 .wrapper_3st {
   background-color: var(--light-black);
   display         : flex;
-  justify-content : space-between;
+  justify-content : space-evenly;
   align-items     : center;
-  padding         : calc(var(--sp-large) * 1) calc(var(--sp-large) * 11);
+  padding         : calc(var(--sp-large) * 1);
+
+  @include mediaScreen('mobile') {
+    display       : flex;
+    flex-direction: column;
+    gap           : var(--sp-large);
+    padding       : calc(var(--sp-large) * 2) 0;
+  }
 }
 
 .sns_link {
@@ -92,14 +122,48 @@
   }
 }
 
+.line {
+  display: none;
+  color : var(--line-color);
+  border: 1px solid var(--line-color);
+
+  @include mediaScreen('mobile') {
+    display       : flex;
+    flex-direction: column;
+    font-size: 14px;
+    gap:0;
+  }
+
+  &:hover {
+    background-color: var(--line-color);
+    color           : var(--white);
+  }
+}
+
 .footer_menu_list {
+  width:100%;
   color      : var(--white);
   font-size  : var(--fs-small);
   display    : flex;
   align-items: center;
   gap        : var(--sp-large);
 
+  @include mediaScreen('mobile') {
+    display       : flex;
+    flex-direction: column;
+    font-size: 14px;
+    gap:0;
+  }
+
   li{
+  width:100%;
+  text-align: center;
+
+    @include mediaScreen('mobile') {
+      border-top: 1px solid var(--white);
+      padding:1em 7%;
+    }
+
     &:hover {
       opacity: .7;
     }
