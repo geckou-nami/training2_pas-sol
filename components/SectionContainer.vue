@@ -13,7 +13,6 @@
 <style lang="scss" module>
 @use '~/assets/scss/mixin' as *;
 .section_container {
-  background-color: var(--base-color);
   width     : 100%;
   min-height: 100dvh;
   padding   : 0 calc(var(--sp-large) * 11);

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import imgSrc from '@/assets/images/5aafae338835b1fd1119f273565bd3de1.jpg';
+// import imgSrc from '@/assets/images/5aafae338835b1fd1119f273565bd3de1.jpg';
 
 type Props = {
   newsList: {
@@ -15,11 +15,13 @@ const props = defineProps<Props>()
 </script>
 
 <template>
-  <SubHero :imageSrc="imgSrc"/>
+  <!-- <SubHero :imageSrc="imgSrc"/> -->
   <SectionContainer>
     <div :class="$style.section_title_wrap">
       <SectionTitle sectionName="NEWS"/>
-      <MoreButton :class="$style.more_button" />
+      <NuxtLink to="/news">
+        <MoreButton :class="$style.more_button" />
+      </NuxtLink>
     </div>
     <ul :class="$style.news_container">
       <li 
@@ -59,8 +61,9 @@ const props = defineProps<Props>()
 }
 
 .section_title_wrap {
-  display: flex;
-  align-items: center;
+  display        : flex;
+  align-items    : center;
+  justify-content: space-between;
 
   .more_button{
     display: block;

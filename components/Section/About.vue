@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import imgSrc from '@/assets/images/41128410a1c9c552aff0f685c4bfab3c.jpg';
+// import imgSrc from '@/assets/images/41128410a1c9c552aff0f685c4bfab3c.jpg';
 
 </script>
 
 <template>
-  <SubHero :imageSrc="imgSrc"/>
+  <!-- <SubHero :imageSrc="imgSrc"/> -->
   <SectionContainer>
     <div :class="$style.about_container">
       <SectionTitle sectionName="ABOUT"/>

@@ -23,11 +23,11 @@ const scrollToTop = () => {
     </div>
     <div :class="$style.wrapper_2st">
       <ul :class="$style.footer_menu_list">
-        <li><a href="">TOP</a></li>
-        <li><a href="">PRODUCT</a></li>
-        <li><a href="">ABOUT</a></li>
-        <li><a href="">NEWS</a></li>
-        <li><a href="">CONTACT</a></li>
+        <li><a href=""><NuxtLink to="/">TOP</NuxtLink></a></li>
+        <li><a href=""><NuxtLink to="/product">PRODUCT</NuxtLink></a></li>
+        <li><a href=""><NuxtLink to="/about">ABOUT</NuxtLink></a></li>
+        <li><a href=""><NuxtLink to="/news">NEWS</NuxtLink></a></li>
+        <li><a href=""><NuxtLink to="/contact">CONTACT</NuxtLink></a></li>
       </ul>
     </div>
     <div :class="$style.wrapper_3st">
@@ -151,18 +151,19 @@ const scrollToTop = () => {
 }
 
 .footer_menu_list {
-  width:100%;
   color      : var(--white);
   font-size  : var(--fs-small);
   display    : flex;
   align-items: center;
+  justify-content: center;
   gap        : var(--sp-large);
 
   @include mediaScreen('mobile') {
+    width         : 100%;
     display       : flex;
     flex-direction: column;
-    font-size: 14px;
-    gap:0;
+    font-size     : 14px;
+    gap           : 0;
   }
 
   li{
@@ -171,7 +172,7 @@ const scrollToTop = () => {
 
     @include mediaScreen('mobile') {
       border-top: 1px solid var(--white);
-      padding:1em 7%;
+      padding   : 1em 7%;
     }
 
     &:hover {

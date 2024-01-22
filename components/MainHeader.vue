@@ -5,14 +5,16 @@
 <template>
   <div :class="$style.header_container">
     <h1>
-      <img src="~assets/images/siteLogo-pc@2x (1).png" alt="PAS-SOL" :class="$style.main_logo">
+      <NuxtLink to="/">
+        <img src="~assets/images/siteLogo-pc@2x (1).png" alt="PAS-SOL" :class="$style.main_logo">
+      </NuxtLink>
     </h1>
     <ul :class="$style.menu_list">
-      <li><a href="">TOP</a></li>
-      <li><a href="">PRODUCT</a></li>
-      <li><a href="">ABOUT</a></li>
-      <li><a href="">NEWS</a></li>
-      <li><a href="">CONTACT</a></li>
+      <li><a href=""><NuxtLink to="/">TOP</NuxtLink></a></li>
+      <li><a href=""><NuxtLink to="/product">PRODUCT</NuxtLink></a></li>
+      <li><a href=""><NuxtLink to="/about">ABOUT</NuxtLink></a></li>
+      <li><a href=""><NuxtLink to="/news">NEWS</NuxtLink></a></li>
+      <li><a href=""><NuxtLink to="/contact">CONTACT</NuxtLink></a></li>
     </ul>
 
   </div>

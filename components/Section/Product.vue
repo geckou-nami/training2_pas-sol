@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import imgSrc from '@/assets/images/fdbc5ff355eecda21f063b701c8b6b72.jpg';
+// import imgSrc from '@/assets/images/fdbc5ff355eecda21f063b701c8b6b72.jpg';
 
 type Props = {
   productList: {
@@ -13,12 +13,14 @@ const props = defineProps<Props>()
 </script>
 
 <template>
-  <SubHero :imageSrc="imgSrc"/>
+  <!-- <SubHero :imageSrc="imgSrc"/> -->
   <SectionContainer>
     <div :class="$style.product_container">
       <div :class="$style.section_title_wrap">
         <SectionTitle sectionName="PRODUCT"/>
-        <MoreButton :class="$style.more_button" />
+        <NuxtLink to="/product">
+          <MoreButton :class="$style.more_button" />
+        </NuxtLink>
       </div>
       <ul :class="$style.product_list">
         <li
@@ -47,18 +49,18 @@ const props = defineProps<Props>()
 
 .product_container{
   width: 100%;
-
 }
 
 .section_title_wrap {
-  display: flex;
+  display    : flex;
   align-items: center;
+  justify-content: space-between;
 
   .more_button{
     display: block;
 
     @include mediaScreen('mobile') {
-      display   : none;
+      display: none;
     }
   }
 }
@@ -88,20 +90,20 @@ const props = defineProps<Props>()
 .product_list_item {
 
   @include mediaScreen('tablet') {
-    display              : flex;
+    display: flex;
 
     .product_img {
-      width:33%;
+      width: 33%;
     }
   }
 
   @include mediaScreen('mobile') {
-    display              : flex;
+    display       : flex;
     flex-direction: column;
-    gap                  : var(--sp-large) 0;
+    gap           : var(--sp-large) 0;
 
     .product_img {
-      width:100%;
+      width: 100%;
     }
   }
 }

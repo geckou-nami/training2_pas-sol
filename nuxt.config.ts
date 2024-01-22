@@ -13,6 +13,9 @@ export default defineNuxtConfig({
         { property: 'og:image', content: '/ogp.png' },
         { property: 'og:type', content: 'article' },
       ],
+      link: [
+        { rel: "icon", type: "image/png", href: "/favicon.png" }, 
+      ],
     },
   },
   css: [
