@@ -6,7 +6,13 @@
   <div :class="$style.hero_container">
     <MainHeader :class="$style.header" />
     <div :class="$style.main_pic_wrapper">
-      <div :class="$style.main_pic" />
+      <div :class="$style.main_pic_box">
+        <div :class="$style.main_pic" />
+        <div :class="$style.main_pic" />
+        <div :class="$style.main_pic" />
+        <div :class="$style.main_pic" />
+        <div :class="$style.main_pic" />
+      </div>
       <div :class="$style.bottom_pic" />
       <div :class="$style.sp_logo_pic" />
       <div :class="$style.arrow_pic"/>
@@ -58,24 +64,57 @@
 
 .main_pic_wrapper {
   position: relative;
-  width:100%;
-  height:100%;
+  width   : 100%;
 }
 
+.main_pic_box {
+    position: relative;
+    width   : 100%;
+    height  : 100vh;
+}
+
+
 .main_pic {
-  width              : 100%;
-  height             : 900px;
-  background-image   : url(assets/images/main_visual_111-0x0.jpg);
-  background-repeat  : no-repeat;
-  background-size    : cover;
-  background-position: center;
+  position                 : absolute;
+  top                      : 0px;
+  left                     : 0px;
+  width                    : 100%;
+  height                   : 100vh;
+  background-repeat        : no-repeat;;
+  background-repeat        : no-repeat;
+  background-size          : cover;
+  background-position      : center;
+  opacity                  : 1;
+  animation-name           : slideShow;
+  animation-duration       : 24s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+
+@keyframes slideShow { 
+  0% {
+    background-image: url(assets/images/main_visual_111-0x0.jpg)
+  }
+  30% {
+    background-image: url(assets/images/main_visual_13-0x0.jpg);
+  }
+  50% {
+    background-image: url(assets/images/main_visual_7-0x0.jpg);
+  }
+  70% {
+    background-image: url(assets/images/main_visual_6-0x0.jpg);
+  }
+  100% {
+    background-image: url(assets/images/main_visual_2-0x0.jpg);
+  }
 }
 
 .bottom_pic {
   width              : 100%;
-  height             : 900px;
+  height             : 100%;
   background-image   : url(assets/images/mainVisual-overlay.png);
-  background-repeat  : no-repeat;
+  background-repeat: no-repeat;
   background-size    : contain;
   background-position: 0 bottom;
   position           : absolute;

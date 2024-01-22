@@ -12,7 +12,10 @@ const backgroundStyle = computed(() => ({
   <div :class="$style.subheader_container">
     <MainHeader :class="$style.header" />
     <div :class="$style.main_pic_wrapper">
-      <div :class="$style.main_pic" :style="backgroundStyle" />
+      <div 
+        :class="$style.main_pic" 
+        :style="backgroundStyle" 
+      />
       <div :class="$style.bottom_pic" />
       <div :class="$style.sp_logo_pic" />
     </div>

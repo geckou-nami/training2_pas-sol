@@ -18,7 +18,7 @@ const props = defineProps<Props>()
     <div :class="$style.product_container">
       <div :class="$style.section_title_wrap">
         <SectionTitle sectionName="PRODUCT"/>
-        <MoreButton />
+        <MoreButton :class="$style.more_button" />
       </div>
       <ul :class="$style.product_list">
         <li
@@ -34,7 +34,10 @@ const props = defineProps<Props>()
         </li>
       </ul>
     </div>
-    <BackToButton />
+    <button>
+      <BackToButton :class="$style.back_to_button" />
+      <MoreButton :class="$style.more_button" />
+    </button>
   </SectionContainer>
 </template>
 
@@ -50,6 +53,14 @@ const props = defineProps<Props>()
 .section_title_wrap {
   display: flex;
   align-items: center;
+
+  .more_button{
+    display: block;
+
+    @include mediaScreen('mobile') {
+      display   : none;
+    }
+  }
 }
 
 .product_list {
@@ -91,6 +102,31 @@ const props = defineProps<Props>()
 
     .product_img {
       width:100%;
+    }
+  }
+}
+
+button {
+  width     : 100%;
+  text-align: center;
+
+  .back_to_button {
+    display: block;
+
+    @include mediaScreen('mobile') {
+      display   : none;
+      padding   : calc(var(--sp-larger) * 1.5) 0;
+      text-align: center;
+    }
+  }
+
+  .more_button{
+    display: none;
+
+    @include mediaScreen('mobile') {
+      display   : block;
+      padding   : calc(var(--sp-larger) * 1.5) 0;
+      text-align: center;
     }
   }
 }

@@ -5,6 +5,7 @@ const newsList = await fetch('/json/news.json').then(res => res.json())
 </script>
 
 <template>
+  <HamburgerMenu />
   <SectionHero />
   <SectionAbout />
   <SectionProduct 

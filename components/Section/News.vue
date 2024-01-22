@@ -19,7 +19,7 @@ const props = defineProps<Props>()
   <SectionContainer>
     <div :class="$style.section_title_wrap">
       <SectionTitle sectionName="NEWS"/>
-      <MoreButton />
+      <MoreButton :class="$style.more_button" />
     </div>
     <ul :class="$style.news_container">
       <li 
@@ -41,7 +41,10 @@ const props = defineProps<Props>()
         </div>
       </li>
     </ul>
-    <BackToButton />
+    <button>
+      <BackToButton :class="$style.back_to_button" />
+      <MoreButton :class="$style.more_button" />
+    </button>
   </SectionContainer>
 </template>
 
@@ -58,6 +61,14 @@ const props = defineProps<Props>()
 .section_title_wrap {
   display: flex;
   align-items: center;
+
+  .more_button{
+    display: block;
+
+    @include mediaScreen('mobile') {
+      display   : none;
+    }
+  }
 }
 
 .news_article_wrapper {
@@ -114,6 +125,32 @@ const props = defineProps<Props>()
 
     @include mediaScreen('mobile') {
       display: none;
+    }
+  }
+}
+
+
+button {
+  width     : 100%;
+  text-align: center;
+
+  .back_to_button {
+    display: block;
+
+    @include mediaScreen('mobile') {
+      display   : none;
+      padding   : calc(var(--sp-larger) * 1.5) 0;
+      text-align: center;
+    }
+  }
+
+  .more_button{
+    display: none;
+
+    @include mediaScreen('mobile') {
+      display   : block;
+      padding   : calc(var(--sp-larger) * 1.5) 0;
+      text-align: center;
     }
   }
 }

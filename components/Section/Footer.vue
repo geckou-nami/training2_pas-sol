@@ -1,10 +1,20 @@
 <script setup lang="ts">
 
+// scrollToTop 関数を定義
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
 </script>
 
 <template>
   <div :class="$style.footer_container">
-    <a href=""><img src="~assets/images/backTop@2x (1).png" alt="上に戻る" :class="$style.back_top_button"></a>
+    <img 
+      src="~assets/images/backTop@2x (1).png" 
+      alt="上に戻る" 
+      :class="$style.back_top_button"
+      @click="scrollToTop"
+    >
     <div :class="$style.wrapper_1st">
       <a :class="[$style.sns_link, $style.facebook]" href="#">Share on Facebook</a>
       <a :class="[$style.sns_link, $style.twitter]" href="#">Share on twitter</a>
@@ -38,7 +48,7 @@
   display    : block;
   width      : 50px;
   position   : absolute;
-  top        : 25px;
+  top        : -5px;
   left       : 50%;
   margin-left: -25px;
   margin-top : -25px;
