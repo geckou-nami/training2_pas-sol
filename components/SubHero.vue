@@ -1,11 +1,32 @@
 <script lang="ts" setup>
-const props = defineProps<{
-  imageSrc: string
-}>()
+import about from '@/assets/images/41128410a1c9c552aff0f685c4bfab3c.jpg'
+import newsImage from '@/assets/images/5aafae338835b1fd1119f273565bd3de1.jpg'
+import contact from '@/assets/images/7e5b7de0a02f15808796fe8cd4fc3ab3.jpg'
+import product from '@/assets/images/fdbc5ff355eecda21f063b701c8b6b72.jpg'
 
-const backgroundStyle = computed(() => ({
-  'background-image': `url(${props.imageSrc})`
-}))
+// const props = defineProps<{
+//   imageSrc: string
+// }>()
+
+const route = useRoute()
+
+const currentImageSrc = computed(() => {
+  const currentRouteName = route.name
+  return (() => {
+    switch (currentRouteName) {
+      case 'about':
+        return about
+      case 'news':
+        return newsImage
+      case 'contact':
+        return contact
+      case 'product':
+        return product
+      default:
+        return ''
+    }
+  })()
+})
 </script>
 
 <template>
@@ -14,7 +35,9 @@ const backgroundStyle = computed(() => ({
     <div :class="$style.main_pic_wrapper">
       <div 
         :class="$style.main_pic" 
-        :style="backgroundStyle" 
+        :style="{
+          'background-image': `url(${currentImageSrc})`
+        }" 
       />
       <div :class="$style.bottom_pic" />
       <div :class="$style.sp_logo_pic" />
