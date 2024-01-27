@@ -1,12 +1,8 @@
 <script lang="ts" setup>
-import about from '@/assets/images/41128410a1c9c552aff0f685c4bfab3c.jpg'
+import aboutImage from '@/assets/images/41128410a1c9c552aff0f685c4bfab3c.jpg'
 import newsImage from '@/assets/images/5aafae338835b1fd1119f273565bd3de1.jpg'
-import contact from '@/assets/images/7e5b7de0a02f15808796fe8cd4fc3ab3.jpg'
-import product from '@/assets/images/fdbc5ff355eecda21f063b701c8b6b72.jpg'
-
-// const props = defineProps<{
-//   imageSrc: string
-// }>()
+import contactImage from '@/assets/images/7e5b7de0a02f15808796fe8cd4fc3ab3.jpg'
+import productImage from '@/assets/images/fdbc5ff355eecda21f063b701c8b6b72.jpg'
 
 const route = useRoute()
 
@@ -15,13 +11,13 @@ const currentImageSrc = computed(() => {
   return (() => {
     switch (currentRouteName) {
       case 'about':
-        return about
+        return aboutImage
       case 'news':
         return newsImage
       case 'contact':
-        return contact
+        return contactImage
       case 'product':
-        return product
+        return productImage
       default:
         return ''
     }
@@ -104,6 +100,7 @@ const currentImageSrc = computed(() => {
     top                : 50%;
     left               : 50%;
     transform          : translate(-50%, -50%);
+    z-index: 99;
   }
 }
 </style>
