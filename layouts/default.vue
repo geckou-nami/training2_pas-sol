@@ -1,8 +1,11 @@
 <template>
   <main :class="$style.main">
     <SubHero />
-      <slot />
-    <SectionFooter />
+      <SectionContainer>
+        <slot />
+        <BackToButton />
+      </SectionContainer>
+    <FooterPage />
   </main>
 </template>
 

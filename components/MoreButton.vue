@@ -25,6 +25,7 @@
   background         : url(assets/images/button-arrow@2x.png) no-repeat;
   background-size    : 7px 12px;
   background-position: 140px 50%;
+  margin-top         : 40px;
 
   &:hover {
     background-color: var(--black);

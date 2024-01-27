@@ -1,46 +1,38 @@
 <script lang="ts" setup>
-// import imgSrc from '@/assets/images/fdbc5ff355eecda21f063b701c8b6b72.jpg';
 
 type Props = {
   productList: {
     image: string,
     name: string,
     link: string
-  }[]
+  }[],
+  limit?: number
 }
 
 const props = defineProps<Props>()
+
+// limit が設定されていれば、その数だけニュースを表示する
+const displayedProducts = computed(() => {
+  return props.limit ? props.productList.slice(0, props.limit) : props.productList;
+});
 </script>
 
 <template>
-  <!-- <SubHero :imageSrc="imgSrc"/> -->
-  <SectionContainer>
-    <div :class="$style.product_container">
-      <div :class="$style.section_title_wrap">
-        <SectionTitle sectionName="PRODUCT"/>
-        <NuxtLink to="/product">
-          <MoreButton :class="$style.more_button" />
-        </NuxtLink>
-      </div>
-      <ul :class="$style.product_list">
-        <li
-          v-for="product in productList"
-          :key="product.name"
-          :class="$style.product_list_item"
-        >
-          <img 
-            :src="`/images/product/${product.image}`"
-            :class="$style.product_img"
-          /> 
-          <h3>{{ product.name }}</h3>
-        </li>
-      </ul>
-    </div>
-    <button>
-      <BackToButton :class="$style.back_to_button" />
-      <MoreButton :class="$style.more_button" />
-    </button>
-  </SectionContainer>
+  <div :class="$style.product_container">
+    <ul :class="$style.product_list">
+      <li
+        v-for="product in displayedProducts"
+        :key="product.name"
+        :class="$style.product_list_item"
+      >
+        <img 
+          :src="`/images/product/${product.image}`"
+          :class="$style.product_img"
+        /> 
+        <h3>{{ product.name }}</h3>
+      </li>
+    </ul>
+  </div>
 </template>
 
 
