@@ -2,7 +2,11 @@
   <div :class="$style.header_container">
     <h1>
       <NuxtLink to="/">
-        <img src="~assets/images/siteLogo-pc@2x (1).png" alt="PAS-SOL" :class="$style.main_logo">
+        <img
+          src="~assets/images/siteLogo-pc@2x (1).png"
+          alt="PAS-SOL"
+          :class="$style.main_logo"
+        >
       </NuxtLink>
     </h1>
     <ul :class="$style.menu_list">
@@ -12,7 +16,6 @@
       <li><a href=""><NuxtLink to="/news">NEWS</NuxtLink></a></li>
       <li><a href=""><NuxtLink to="/contact">CONTACT</NuxtLink></a></li>
     </ul>
-
   </div>
 </template>
 

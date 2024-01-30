@@ -1,19 +1,11 @@
 <template>
-  <main :class="$style.main">
+  <main>
     <HamburgerMenu />
     <SubHero />
-      <SectionContainer>
-        <slot />
-        <BackToButton />
-      </SectionContainer>
+    <SectionContainer>
+      <slot />
+      <BackToButton />
+    </SectionContainer>
     <FooterPage />
   </main>
 </template>
-
-
-<style lang = "scss" module>
-
-.main {
-
-}
-</style>

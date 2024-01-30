@@ -3,41 +3,41 @@ const productList = await fetch('/json/product.json').then(res => res.json())
 const newsList = await fetch('/json/news.json').then(res => res.json())
 
 definePageMeta({ layout: false })
-
 </script>
 
 <template>
-  <HamburgerMenu />
-  <HeroPage />
-  <SectionContainer :class="$style.product_section_container">
-    <div :class="$style.section_title_wrap">
-      <SectionTitle sectionName="PRODUCT"/>
-      <NuxtLink to="/product">
-        <MoreButton :class="$style.more_button"/>
-      </NuxtLink>
-    </div>
-    <ProductPage 
-      :productList="productList"
-      :limit="6"
-      :class="$style.product_list"
-    />
-  </SectionContainer>
-  <SectionContainer>
-    <div :class="$style.section_title_wrap">
-      <SectionTitle sectionName="NEWS"/>
-      <NuxtLink to="/news">
-        <MoreButton :class="$style.more_button"/>
-      </NuxtLink>
-    </div>
-    <NewsPage 
-      :newsList="newsList"
-      :limit="3"
-      :class="$style.news_list"
-    />
-  </SectionContainer>
-  <FooterPage />
+  <div>
+    <HamburgerMenu />
+    <HeroPage />
+    <SectionContainer :class="$style.product_section_container">
+      <div :class="$style.section_title_wrap">
+        <SectionTitle sectionName="PRODUCT" />
+        <NuxtLink to="/product">
+          <MoreButton :class="$style.more_button" />
+        </NuxtLink>
+      </div>
+      <ProductPage 
+        :productList="productList"
+        :limit="6"
+        :class="$style.product_list"
+      />
+    </SectionContainer>
+    <SectionContainer>
+      <div :class="$style.section_title_wrap">
+        <SectionTitle sectionName="NEWS" />
+        <NuxtLink to="/news">
+          <MoreButton :class="$style.more_button" />
+        </NuxtLink>
+      </div>
+      <NewsPage 
+        :newsList="newsList"
+        :limit="3"
+        :class="$style.news_list"
+      />
+    </SectionContainer>
+    <FooterPage />
+  </div>
 </template>
-
 
 <style lang="scss" module>
 @use '~/assets/scss/mixin' as *;

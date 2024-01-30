@@ -1,8 +1,3 @@
-<script lang="ts" setup>
-// import imgSrc from '@/assets/images/41128410a1c9c552aff0f685c4bfab3c.jpg';
-
-</script>
-
 <template>
   <div :class="$style.about_container">
     <img
@@ -19,8 +14,6 @@
       </p>
       <p>そして、人と人がつながるこんな時代だからこそ、僕たちはみんなで作り上げていくモノづくりを追求していきたいと思います。</p>
     </div>
-
-
     <div :class="$style.introduction_wrap">
       <img
         src="~assets/images/about-photo.jpg"
@@ -41,7 +34,6 @@
   </div>
 </template>
 
-
 <style lang="scss" module>
 @use '~/assets/scss/mixin' as *;
 
@@ -61,7 +53,7 @@
 .about_text {
   padding: var(--sp-larger) 0;
 
-  p{
+  p {
     margin-bottom: var(--sp-medium);
   }
 }
@@ -86,7 +78,6 @@
     font-size     : var(--fs-large);
   }
 }
-
 
 .website_link_wrap {
   display        : flex;

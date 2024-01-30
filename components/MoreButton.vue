@@ -1,6 +1,11 @@
 <template>
   <div :class="$style.more_button_container">
-    <a :class="$style.more_button" href="#">MORE</a>
+    <a
+      :class="$style.more_button"
+      href="#"
+    >
+      MORE
+    </a>
   </div>
 </template>
 

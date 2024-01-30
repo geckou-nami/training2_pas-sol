@@ -11,27 +11,35 @@
       </div>
       <div :class="$style.bottom_pic" />
       <div :class="$style.sp_logo_pic" />
-      <div :class="$style.arrow_pic"/>
+      <div :class="$style.arrow_pic" />
     </div>
     <SectionContainer>
       <div :class="$style.main_text_wrapper">
         <h2>旅に出よう。</h2>
         <div :class="$style.hero_description">
-          <p>僕たちが作りたいのは<br>
+          <p>
+            僕たちが作りたいのは<br>
             持っているだけで旅に出たくなるモノ。<br>
             持っているだけでわくわくするモノ。
           </p>
-          <p>それは新しい時代の “パスポート”<br>
+          <p>
+            それは新しい時代の “パスポート”<br>
             僕たちが作るものは、<br>
             そんな、存在でありたい。
           </p>
-          <p>そして、人と人が繋がる<br>
+          <p>
+            そして、人と人が繋がる<br>
             こんな時代だからこそ、<br>
             僕たちは、みんなでひとつのモノを<br>
             作ることを追求したい。
           </p>
-          <img src="~assets/images/concept-siteLogo@2x.png" alt="PAS-POL" :class="$style.concept_logo_image">
-          <p>それは、自分と世界を繋げる<br>
+          <img
+            src="~assets/images/concept-siteLogo@2x.png"
+            alt="PAS-POL"
+            :class="$style.concept_logo_image"
+          >
+          <p>
+            それは、自分と世界を繋げる<br>
             旅のモノづくりブランド
           </p>
         </div>
@@ -39,7 +47,6 @@
     </SectionContainer>
   </div>
 </template>
-
 
 <style lang="scss" module>
  @use '~/assets/scss/mixin' as *;
@@ -68,7 +75,6 @@
     width   : 100%;
     height  : 100vh;
 }
-
 
 .main_pic {
   position                 : absolute;

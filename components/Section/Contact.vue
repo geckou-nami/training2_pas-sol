@@ -11,9 +11,7 @@
 
 
 <style lang="scss" module>
-
 .contact_container{
-
   p {
     margin-bottom: var(--sp-large);
   }
@@ -22,6 +20,5 @@
     text-decoration: underline;
   }
 }
-
 </style>
 

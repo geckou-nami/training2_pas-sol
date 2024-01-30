@@ -17,7 +17,6 @@
         <p>そして、人と人がつながるこんな時代だからこそ、僕たちはみんなで作り上げていくモノづくりを追求していきたいと思います。</p>
       </div>
 
-
       <div :class="$style.introduction_wrap">
         <img
           src="~assets/images/about-photo.jpg"
@@ -39,7 +38,6 @@
     <BackToButton />
   </SectionContainer>
 </template>
-
 
 <style lang="scss" module>
 @use '~/assets/scss/mixin' as *;

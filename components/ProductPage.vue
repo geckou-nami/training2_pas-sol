@@ -12,8 +12,8 @@ const props = defineProps<Props>()
 
 // limit が設定されていれば、その数だけニュースを表示する
 const displayedProducts = computed(() => {
-  return props.limit ? props.productList.slice(0, props.limit) : props.productList;
-});
+  return props.limit ? props.productList.slice(0, props.limit) : props.productList
+})
 </script>
 
 <template>
@@ -27,13 +27,12 @@ const displayedProducts = computed(() => {
         <img 
           :src="`/images/product/${product.image}`"
           :class="$style.product_img"
-        /> 
+        > 
         <h3>{{ product.name }}</h3>
       </li>
     </ul>
   </div>
 </template>
-
 
 <style lang="scss" module>
 @use '~/assets/scss/mixin' as *;

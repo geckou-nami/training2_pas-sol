@@ -5,7 +5,6 @@
 </template>
 
 <style lang="scss" module>
-
 .back_button_container {
   width:100%;
   display: flex;

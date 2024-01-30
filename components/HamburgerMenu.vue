@@ -1,10 +1,9 @@
 <script lang="ts" setup>
-const isActive =ref(false);
+const isActive =ref(false)
 
 const toggleMenu = () => {
-  isActive.value = !isActive.value;
+  isActive.value = !isActive.value
 }
-
 </script>
 
 <template>
@@ -56,7 +55,6 @@ const toggleMenu = () => {
   }
 }
 .link_list_wrapper {
-
   .link_list {
     background-color: rgba(0, 0, 0, 0.7);;
     color           : var(--white);
