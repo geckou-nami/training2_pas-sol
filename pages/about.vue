@@ -4,7 +4,8 @@
 
 <template>
   <section>
-    <SectionAbout />
+    <SectionTitle sectionName="ABOUT"/>
+    <AboutPage />
   </section>
 </template>
 

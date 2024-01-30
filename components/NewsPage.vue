@@ -1,19 +1,29 @@
 <script lang="ts" setup>
+<<<<<<< HEAD:components/Section/News.vue
 
+=======
+>>>>>>> 7dff6e49d0cc40c46a5d080e872b4031bd54c7e2:components/NewsPage.vue
 type Props = {
   newsList: {
     image: string,
     title: string,
-    date : string,
-    text : string,
-    link : string
-  }[]
+    date: string,
+    text: string,
+    link: string
+  }[],
+  limit?: number
 }
 
 const props = defineProps<Props>()
+
+// limit が設定されていれば、その数だけニュースを表示する
+const displayedNews = computed(() => {
+  return props.limit ? props.newsList.slice(0, props.limit) : props.newsList;
+});
 </script>
 
 <template>
+<<<<<<< HEAD:components/Section/News.vue
   <SectionContainer>
     <div :class="$style.section_title_wrap">
       <SectionTitle sectionName="NEWS"/>
@@ -46,6 +56,28 @@ const props = defineProps<Props>()
       <MoreButton :class="$style.more_button" />
     </button>
   </SectionContainer>
+=======
+  <ul :class = "$style.news_container">
+    <li 
+        v-for = "news in displayedNews"
+      :key    = "news.title"
+      :class  = "$style.news_article_wrapper"
+    >
+      <div :class = "$style.image_box">
+        <img 
+          :src   = "`/images/news/${news.image}`"
+            alt  = "記事の関連写真"
+          :class = "$style.news_img"
+        >
+      </div>
+      <div :class = "$style.news_article">
+      <h3  :class = "$style.news_title">{{ news.title }}</h3>
+        <date>{{ news.date }}</date>
+        <p :class = "$style.news_text">{{ news.text }}</p>
+      </div>
+    </li>
+  </ul>
+>>>>>>> 7dff6e49d0cc40c46a5d080e872b4031bd54c7e2:components/NewsPage.vue
 </template>
 
 
@@ -56,20 +88,6 @@ const props = defineProps<Props>()
   display       : flex;
   flex-direction: column;
   gap           : calc(var(--sp-large) * 2);
-}
-
-.section_title_wrap {
-  display        : flex;
-  align-items    : center;
-  justify-content: space-between;
-
-  .more_button{
-    display: block;
-
-    @include mediaScreen('mobile') {
-      display   : none;
-    }
-  }
 }
 
 .news_article_wrapper {

@@ -5,9 +5,10 @@ const newsList = await fetch('/json/news.json').then(res => res.json())
 
 <template>
   <section>
-    <SectionNews 
-      :newsList="newsList"
-    />
+    <SectionTitle sectionName="NEWS"/>
+      <NewsPage 
+        :newsList="newsList"
+      />
   </section>
 </template>
 

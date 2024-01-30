@@ -1,16 +1,27 @@
 <script lang="ts" setup>
+<<<<<<< HEAD:components/Section/Product.vue
+=======
+
+>>>>>>> 7dff6e49d0cc40c46a5d080e872b4031bd54c7e2:components/ProductPage.vue
 type Props = {
   productList: {
     image: string,
     name: string,
     link: string
-  }[]
+  }[],
+  limit?: number
 }
 
 const props = defineProps<Props>()
+
+// limit が設定されていれば、その数だけニュースを表示する
+const displayedProducts = computed(() => {
+  return props.limit ? props.productList.slice(0, props.limit) : props.productList;
+});
 </script>
 
 <template>
+<<<<<<< HEAD:components/Section/Product.vue
   <SectionContainer>
     <div :class="$style.product_container">
       <div :class="$style.section_title_wrap">
@@ -36,6 +47,23 @@ const props = defineProps<Props>()
     <BackToButton :class="$style.back_to_button" />
     <MoreButton :class="$style.more_button" />
   </SectionContainer>
+=======
+  <div :class="$style.product_container">
+    <ul :class="$style.product_list">
+      <li
+        v-for="product in displayedProducts"
+        :key="product.name"
+        :class="$style.product_list_item"
+      >
+        <img 
+          :src="`/images/product/${product.image}`"
+          :class="$style.product_img"
+        /> 
+        <h3>{{ product.name }}</h3>
+      </li>
+    </ul>
+  </div>
+>>>>>>> 7dff6e49d0cc40c46a5d080e872b4031bd54c7e2:components/ProductPage.vue
 </template>
 
 

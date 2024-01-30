@@ -11,11 +11,11 @@ const toggleMenu = () => {
   <div :class="[$style.menu_container, isActive ? $style.active : '']">
     <div :class="$style.link_list_wrapper">
       <ul :class="$style.link_list">
-        <li><a href="#">TOP</a></li>
-        <li><a href="#">PRODUCT</a></li>
-        <li><a href="#">ABOUT</a></li>
-        <li><a href="#">NEWS</a></li>
-        <li><a href="#">CONTACT</a></li>
+        <li><a href=""><NuxtLink to="/">TOP</NuxtLink></a></li>
+        <li><a href=""><NuxtLink to="/product">PRODUCT</NuxtLink></a></li>
+        <li><a href=""><NuxtLink to="/about">ABOUT</NuxtLink></a></li>
+        <li><a href=""><NuxtLink to="/news">NEWS</NuxtLink></a></li>
+        <li><a href=""><NuxtLink to="/contact">CONTACT</NuxtLink></a></li>
       </ul>
     </div>
     <div :class="$style.link_title_wrapper">
@@ -41,6 +41,7 @@ const toggleMenu = () => {
   display: none;
 
   @include mediaScreen('tablet') {
+<<<<<<< HEAD
     display   : block;
     z-index   : 999;
     position  : fixed;
@@ -48,6 +49,15 @@ const toggleMenu = () => {
     left      : 0;
     width     : 100%;
     height    : 100%;;
+=======
+    display: block;
+    z-index: var(--z-index-max);
+    position:fixed;
+    top:calc((var(--sp-medium) * -10) + (var(--fs-medium) * -5) + -60px);
+    left:0;
+    width:100%;
+    height:100%;;
+>>>>>>> 7dff6e49d0cc40c46a5d080e872b4031bd54c7e2
     transition: all 0.6s;
 
     &.active {

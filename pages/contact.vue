@@ -5,7 +5,8 @@
 
 <template>
   <section>
-    <SectionContact />
+    <SectionTitle sectionName="CONTACT" />
+    <ContactPage />
   </section>
 </template>
 

@@ -1,8 +1,12 @@
 <template>
   <main :class="$style.main">
+    <HamburgerMenu />
     <SubHero />
-      <slot />
-    <SectionFooter />
+      <SectionContainer>
+        <slot />
+        <BackToButton />
+      </SectionContainer>
+    <FooterPage />
   </main>
 </template>
 
