@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const isActive =ref(false)
+const isActive = ref(false)
 
 const changePage = () => {
   isActive.value = !isActive.value

@@ -7,7 +7,7 @@ definePageMeta({ layout: false })
 
 <template>
   <div>
-    <HamburgerMenu />
+    <GlobalNav />
     <HeroPage />
     <SectionContainer :class="$style.product_section_container">
       <div :class="$style.section_title_wrap">

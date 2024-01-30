@@ -1,6 +1,6 @@
 <template>
   <main>
-    <HamburgerMenu />
+    <GlobalNav />
     <SubHero />
     <SectionContainer>
       <slot />
