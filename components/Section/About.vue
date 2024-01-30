@@ -35,7 +35,7 @@
         </div>
       </div>
     </div>
-    <BackToButton />
+    <BackButton />
   </SectionContainer>
 </template>
 

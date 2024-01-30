@@ -5,7 +5,7 @@
       <p>お問い合わせはこちらのメールアドレスまでお願いします。</p>
       <a href="#">pas-pol@tabippo.net</a>
     </div>
-    <BackToButton />
+    <BackButton />
   </SectionContainer>
 </template>
 

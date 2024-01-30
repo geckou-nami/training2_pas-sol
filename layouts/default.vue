@@ -4,7 +4,7 @@
     <SubHero />
     <SectionContainer>
       <slot />
-      <BackToButton />
+      <BackButton />
     </SectionContainer>
     <FooterPage />
   </main>
