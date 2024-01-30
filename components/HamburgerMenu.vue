@@ -10,11 +10,31 @@ const toggleMenu = () => {
   <div :class="[$style.menu_container, isActive ? $style.active : '']">
     <div :class="$style.link_list_wrapper">
       <ul :class="$style.link_list">
-        <li><a href=""><NuxtLink to="/">TOP</NuxtLink></a></li>
-        <li><a href=""><NuxtLink to="/product">PRODUCT</NuxtLink></a></li>
-        <li><a href=""><NuxtLink to="/about">ABOUT</NuxtLink></a></li>
-        <li><a href=""><NuxtLink to="/news">NEWS</NuxtLink></a></li>
-        <li><a href=""><NuxtLink to="/contact">CONTACT</NuxtLink></a></li>
+        <li>
+          <NuxtLink to="/">
+            TOP
+          </NuxtLink>
+        </li>
+        <li>
+          <NuxtLink to="/product">
+            PRODUCT
+          </NuxtLink>
+        </li>
+        <li>
+          <NuxtLink to="/about">
+            ABOUT
+          </NuxtLink>
+        </li>
+        <li>
+          <NuxtLink to="/news">
+            NEWS
+          </NuxtLink>
+        </li>
+        <li>
+          <NuxtLink to="/contact">
+            CONTACT
+          </NuxtLink>
+        </li>
       </ul>
     </div>
     <div :class="$style.link_title_wrapper">

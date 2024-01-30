@@ -41,11 +41,31 @@ const scrollToTop = () => {
     </div>
     <div :class="$style.wrapper_2st">
       <ul :class="$style.footer_menu_list">
-        <li><a href=""><NuxtLink to="/">TOP</NuxtLink></a></li>
-        <li><a href=""><NuxtLink to="/product">PRODUCT</NuxtLink></a></li>
-        <li><a href=""><NuxtLink to="/about">ABOUT</NuxtLink></a></li>
-        <li><a href=""><NuxtLink to="/news">NEWS</NuxtLink></a></li>
-        <li><a href=""><NuxtLink to="/contact">CONTACT</NuxtLink></a></li>
+        <li>
+          <NuxtLink to="/">
+            TOP
+          </NuxtLink>
+        </li>
+        <li>
+          <NuxtLink to="/product">
+            PRODUCT
+          </NuxtLink>
+        </li>
+        <li>
+          <NuxtLink to="/about">
+            ABOUT
+          </NuxtLink>
+        </li>
+        <li>
+          <NuxtLink to="/news">
+            NEWS
+          </NuxtLink>
+        </li>
+        <li>
+          <NuxtLink to="/contact">
+            CONTACT
+          </NuxtLink>
+        </li>
       </ul>
     </div>
     <div :class="$style.wrapper_3st">
