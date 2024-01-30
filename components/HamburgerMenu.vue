@@ -41,23 +41,13 @@ const toggleMenu = () => {
   display: none;
 
   @include mediaScreen('tablet') {
-<<<<<<< HEAD
     display   : block;
-    z-index   : 999;
+    z-index   : var(--z-index-max);
     position  : fixed;
     top       : calc((var(--sp-medium) * -10) + (var(--fs-medium) * -5) + -60px);
     left      : 0;
     width     : 100%;
-    height    : 100%;;
-=======
-    display: block;
-    z-index: var(--z-index-max);
-    position:fixed;
-    top:calc((var(--sp-medium) * -10) + (var(--fs-medium) * -5) + -60px);
-    left:0;
-    width:100%;
-    height:100%;;
->>>>>>> 7dff6e49d0cc40c46a5d080e872b4031bd54c7e2
+    height    : 100%;
     transition: all 0.6s;
 
     &.active {
