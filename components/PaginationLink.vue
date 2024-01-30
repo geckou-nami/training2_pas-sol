@@ -55,8 +55,8 @@ const changePage = () => {
 @use '~/assets/scss/mixin' as *;
 
 .pagination_container {
-  text-align: center;
-  padding-top: calc(var(--sp-large) * 6);
+  text-align    : center;
+  padding-top   : calc(var(--sp-large) * 6);
   padding-bottom: var(--sp-large);
 }
 

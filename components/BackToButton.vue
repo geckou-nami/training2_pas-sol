@@ -1,7 +1,3 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
   <div :class="$style.back_button_container">
     <a :class="$style.back_button"><NuxtLink to="/">BACK TO TOP</NuxtLink></a>

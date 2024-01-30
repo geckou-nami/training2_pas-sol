@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-// import imgSrc from '@/assets/images/fdbc5ff355eecda21f063b701c8b6b72.jpg';
-
 type Props = {
   productList: {
     image: string,
@@ -13,7 +11,6 @@ const props = defineProps<Props>()
 </script>
 
 <template>
-  <!-- <SubHero :imageSrc="imgSrc"/> -->
   <SectionContainer>
     <div :class="$style.product_container">
       <div :class="$style.section_title_wrap">
@@ -36,10 +33,8 @@ const props = defineProps<Props>()
         </li>
       </ul>
     </div>
-    <button>
-      <BackToButton :class="$style.back_to_button" />
-      <MoreButton :class="$style.more_button" />
-    </button>
+    <BackToButton :class="$style.back_to_button" />
+    <MoreButton :class="$style.more_button" />
   </SectionContainer>
 </template>
 
@@ -71,9 +66,9 @@ const props = defineProps<Props>()
   gap                  : var(--sp-larger) var(--sp-large);
 
   @include mediaScreen('tablet') {
-    display              : flex;
+    display       : flex;
     flex-direction: column;
-    gap                  : var(--sp-large) 0;
+    gap           : var(--sp-large) 0;
   }
 
   h3 {

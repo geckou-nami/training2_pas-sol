@@ -4,10 +4,6 @@ import newsImage from '@/assets/images/5aafae338835b1fd1119f273565bd3de1.jpg'
 import contact from '@/assets/images/7e5b7de0a02f15808796fe8cd4fc3ab3.jpg'
 import product from '@/assets/images/fdbc5ff355eecda21f063b701c8b6b72.jpg'
 
-// const props = defineProps<{
-//   imageSrc: string
-// }>()
-
 const route = useRoute()
 
 const currentImageSrc = computed(() => {

@@ -1,7 +1,3 @@
-<script lang="ts" setup>
-
-</script>
-
 <template>
   <div :class="$style.hero_container">
     <MainHeader :class="$style.header" />

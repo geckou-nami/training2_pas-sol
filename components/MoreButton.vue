@@ -1,7 +1,3 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
   <div :class="$style.more_button_container">
     <a :class="$style.more_button" href="#">MORE</a>
