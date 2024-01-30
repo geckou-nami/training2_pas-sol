@@ -90,7 +90,7 @@
 
 .website_link_wrap {
   display        : flex;
-  justify-content: end;
+  justify-content: flex-end;
 
   @include mediaScreen('mobile') {
     justify-content: start;
