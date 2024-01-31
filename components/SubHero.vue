@@ -46,7 +46,7 @@ const currentImageSrc = computed(() => {
 @use '~/assets/scss/mixin' as *;
 
 .subheader_container {
-  background-color: var(--lightgray);
+  background-color: var(--light-gray);
   width           : 100%;
   position        : relative;
 }
