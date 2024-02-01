@@ -106,7 +106,6 @@ const pictures = [
 
 .small_device_logo {
   display        : none;
-  display        : inline-flex;
   justify-content: center;
   height         : calc(var(--bv) * 30);
   margin         : auto;
