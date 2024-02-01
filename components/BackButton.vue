@@ -1,11 +1,15 @@
 <template>
   <div :class="$style.back_button_container">
-    <a :class="$style.back_button"><NuxtLink to="/">BACK TO TOP</NuxtLink></a>
+    <NuxtLink
+      :class="$style.back_button"
+      to="/"
+    >
+      BACK TO TOP
+    </NuxtLink>
   </div>
 </template>
 
 <style lang="scss" module>
-
 .back_button_container {
   width:100%;
   display: flex;

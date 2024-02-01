@@ -2,7 +2,6 @@
 const props = defineProps<{
   sectionName: string
 }>()
-
 </script>
 
 <template>

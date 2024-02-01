@@ -1,10 +1,8 @@
 <script setup lang="ts">
-
 // scrollToTop 関数を定義
 const scrollToTop = () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-};
-
+  window.scrollTo({ top: 0, behavior: 'smooth' })
+}
 </script>
 
 <template>
@@ -16,23 +14,73 @@ const scrollToTop = () => {
       @click="scrollToTop"
     >
     <div :class="$style.wrapper_1st">
-      <a :class="[$style.sns_link, $style.facebook]" href="#">Share on Facebook</a>
-      <a :class="[$style.sns_link, $style.twitter]" href="#">Share on twitter</a>
-      <a :class="[$style.sns_link, $style.bookmark]" href="#">Hatena Bookmark</a>
-      <a :class="[$style.sns_link, $style.line]" href="#">Send to LINE</a>
+      <a
+        :class="[$style.sns_link, $style.facebook]"
+        href="#"
+      >
+        Share on Facebook
+      </a>
+      <a
+        :class="[$style.sns_link, $style.twitter]"
+        href="#"
+      >
+        Share on twitter
+      </a>
+      <a
+        :class="[$style.sns_link, $style.bookmark]"
+        href="#"
+      >
+        Hatena Bookmark
+      </a>
+      <a
+        :class="[$style.sns_link, $style.line]"
+        href="#"
+      >
+        Send to LINE
+      </a>
     </div>
     <div :class="$style.wrapper_2st">
       <ul :class="$style.footer_menu_list">
-        <li><a href=""><NuxtLink to="/">TOP</NuxtLink></a></li>
-        <li><a href=""><NuxtLink to="/product">PRODUCT</NuxtLink></a></li>
-        <li><a href=""><NuxtLink to="/about">ABOUT</NuxtLink></a></li>
-        <li><a href=""><NuxtLink to="/news">NEWS</NuxtLink></a></li>
-        <li><a href=""><NuxtLink to="/contact">CONTACT</NuxtLink></a></li>
+        <li>
+          <NuxtLink to="/">
+            TOP
+          </NuxtLink>
+        </li>
+        <li>
+          <NuxtLink to="/product">
+            PRODUCT
+          </NuxtLink>
+        </li>
+        <li>
+          <NuxtLink to="/about">
+            ABOUT
+          </NuxtLink>
+        </li>
+        <li>
+          <NuxtLink to="/news">
+            NEWS
+          </NuxtLink>
+        </li>
+        <li>
+          <NuxtLink to="/contact">
+            CONTACT
+          </NuxtLink>
+        </li>
       </ul>
     </div>
     <div :class="$style.wrapper_3st">
-      <a href="#" :class="$style.footer_logo"><img src="~assets/images/siteLogo-small.png" alt="PAL_POL"></a>
-      <p :class="$style.copy_right">Copyright © 2024 PAS-POL -旅のモノづくりブランド-｜TABIPPO All rights reserved.</p>
+      <a
+        href="#"
+        :class="$style.footer_logo"
+      >
+        <img
+          src="~assets/images/siteLogo-small.png"
+          alt="PAL_POL"
+        >
+      </a>
+      <p :class="$style.copy_right">
+        Copyright © 2024 PAS-POL -旅のモノづくりブランド-｜TABIPPO All rights reserved.
+      </p>
     </div>
   </div>
 </template>
@@ -182,12 +230,12 @@ const scrollToTop = () => {
 }
 
 .footer_logo {
-    width : 90px;
-    height: 89px;
-  }
+  width : 90px;
+  height: 89px;
+}
 
-  .copy_right {
-    font-size: var(--fs-min);
-    color    : var(--white);
-  }
+.copy_right {
+  font-size: var(--fs-min);
+  color    : var(--white);
+}
 </style>

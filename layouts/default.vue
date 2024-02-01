@@ -1,19 +1,22 @@
 <template>
-  <main :class="$style.main">
-    <HamburgerMenu />
+  <main>
+    <GlobalNav />
     <SubHero />
-      <SectionContainer>
-        <slot />
-        <BackToButton />
-      </SectionContainer>
+    <GlobalHeader :class="$style.header" />
+    <SectionContainer>
+      <slot />
+      <BackButton />
+    </SectionContainer>
     <FooterPage />
   </main>
 </template>
 
+<style lang="scss" module>
+@use '~/assets/scss/mixin' as *;
 
-<style lang = "scss" module>
-
-.main {
-
+.header {
+  position: absolute;
+  top     : 0;
+  left    : 0;
 }
 </style>

@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-const isActive =ref(false);
+const isActive = ref(false)
 
 const changePage = () => {
-  isActive.value = !isActive.value;
+  isActive.value = !isActive.value
 }
 
 </script>
@@ -12,44 +12,43 @@ const changePage = () => {
     <div :class="$style.pagination">
       <NuxtLink 
         to="/"
-        @click="changePage"
         :class="[$style.pagination_button, isActive ? $style.active : '']"
+        @click="changePage"
       >
-      &lt;
+        &lt;
       </NuxtLink>
       <NuxtLink 
         to="/"
-        @click="changePage"
         :class="[$style.pagination_button, isActive ? $style.active : '']"
+        @click="changePage"
       >
-      1
-      {{ isActive }}
+        1
+        {{ isActive }}
       </NuxtLink>
       <NuxtLink 
         to="/"
-        @click="changePage"
         :class="[$style.pagination_button, isActive ? $style.active : '']"
+        @click="changePage"
       >
-      2
+        2
       </NuxtLink>
       <NuxtLink 
         to="/"
-        @click="changePage"
         :class="[$style.pagination_button, isActive ? $style.active : '']"
+        @click="changePage"
       >
-      3
+        3
       </NuxtLink>
       <NuxtLink 
         to="/"
-        @click="changePage"
         :class="[$style.pagination_button, isActive ? $style.active : '']"
+        @click="changePage"
       >
-      &gt;
+        &gt;
       </NuxtLink>
     </div>
   </div>
 </template>
-
 
 <style lang="scss" module>
 @use '~/assets/scss/mixin' as *;
