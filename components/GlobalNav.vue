@@ -1,12 +1,6 @@
 <script lang="ts" setup>
+import { navItems } from '~/assets/const/nav-items'
 const isActive = ref(false)
-const navItems = [
-  { name: 'TOP', path: '/' },
-  { name: 'PRODUCT', path: '/product' },
-  { name: 'ABOUT', path: '/about' },
-  { name: 'NEWS', path: '/news' },
-  { name: 'CONTACT', path: '/contact' },
-]
 const toggleMenu = () => isActive.value = !isActive.value
 </script>
 
@@ -27,19 +21,17 @@ const toggleMenu = () => isActive.value = !isActive.value
         </NuxtLink>
       </li>
     </ul>
-    <div :class="$style.menu_container">
-      <button
-        :class="$style.menu_button"
-        type="button"
-        @click="toggleMenu"
+    <button
+      :class="$style.menu_button"
+      type="button"
+      @click="toggleMenu"
+    >
+      <span>MENU</span>
+      <img
+        src="~assets/images/navigation-toggle@2x.png"
+        alt="menu"
       >
-        <span>MENU</span>
-        <img
-          src="~assets/images/navigation-toggle@2x.png"
-          alt="menu"
-        >
-      </button>
-    </div>
+    </button>
   </nav>
 </template>
 
@@ -95,21 +87,16 @@ const toggleMenu = () => isActive.value = !isActive.value
   }
 }
 
-.menu_container {
-  display         : flex;
-  padding         : var(--sp-medium) var(--sp-larger);
-  width           : 100%;
+.menu_button {
+  display        : flex;
+  padding        : var(--sp-medium) var(--sp-larger);
+  justify-content: space-between;
+  align-items    : center;
+  width          : 100%;
   height          : var(--nav-item-height);
   background-color: var(--white);
-}
-
-.menu_button {
-  display            : inline-flex;
-  align-items        : center;
-  width              : auto;
-  margin-inline-start: auto;
-  color              : var(--light-black);
-  gap                : var(--sp-min);
+  color          : var(--light-black);
+  gap            : var(--sp-min);
 
   > img {
     width: calc(var(--bv) * 3);

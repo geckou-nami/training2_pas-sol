@@ -10,7 +10,6 @@
 @use '~/assets/scss/mixin' as *;
 .section_container {
   max-width : 786px;
-  box-sizing: content-box;
   padding   : 0 7%;
   margin    : 0 auto;
 }

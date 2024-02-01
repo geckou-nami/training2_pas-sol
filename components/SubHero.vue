@@ -27,13 +27,10 @@ const currentImageSrc = computed(() => {
 
 <template>
   <div :class="$style.subheader_container">
-    <MainHeader :class="$style.header" />
     <div :class="$style.main_pic_wrapper">
       <div 
         :class="$style.main_pic" 
-        :style="{
-          'background-image': `url(${currentImageSrc})`
-        }" 
+        :style="{ 'background-image': `url(${currentImageSrc})` }" 
       />
       <div :class="$style.bottom_pic" />
       <div :class="$style.sp_logo_pic" />
@@ -49,14 +46,6 @@ const currentImageSrc = computed(() => {
   background-color: var(--light-gray);
   width           : 100%;
   position        : relative;
-}
-
-.header {
-  width   : 100%;
-  position: absolute;
-  top     : 0;
-  left    : 0;
-  z-index : var(--z-index-nav);
 }
 
 .main_pic_wrapper {

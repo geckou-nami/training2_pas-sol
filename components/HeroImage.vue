@@ -27,11 +27,14 @@ const pictures = [
       :src="picture"
       :alt="`hero image${index}`"
       :class="$style.image"
-      :style="{
-        animationDelay: `${index * 6}s`, 
-      }"
+      :style="{ animationDelay: `${index * 6}s` }"
     >
-    <MainHeader :class="$style.header" />
+    <span :class="$style.small_device_logo">
+      <img
+        src="~assets/images/siteLogo-sp.png"
+        alt="PAS-POL"
+      >
+    </span>
     <span :class="$style.arrow">
       <img
         src="~assets/images/mainVisual-arrow@2x.png"
@@ -82,14 +85,6 @@ const pictures = [
   clip-path       : ellipse(200% 100% at center 0);
 }
 
-.header {
-  width   : 100%;
-  position: absolute;
-  top     : 0;
-  left    : 0;
-  z-index : var(--z-index-nav);
-}
-
 .image {
   width                    : 100%;
   height                   : 100%;
@@ -106,6 +101,27 @@ const pictures = [
     animation-name           : fadeOut;
     opacity                  : 1;
     animation-iteration-count: 1;
+  }
+}
+
+.small_device_logo {
+  display        : none;
+  display        : inline-flex;
+  justify-content: center;
+  height         : calc(var(--bv) * 30);
+  margin         : auto;
+  position       : absolute;
+  top            : 0;
+  right          : 0;
+  bottom         : 0;
+  left           : 0;
+
+  > img {
+    object-fit: contain;
+  }
+
+  @include mediaScreen('tablet') {
+    display: inline-flex;
   }
 }
 

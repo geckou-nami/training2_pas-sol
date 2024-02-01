@@ -9,6 +9,7 @@ definePageMeta({ layout: false })
   <div>
     <GlobalNav />
     <HeroImage />
+    <GlobalHeader :class="$style.header" />
     <SectionContainer>
       <div :class="$style.main_text_wrapper">
         <h2>旅に出よう。</h2>
@@ -73,6 +74,13 @@ definePageMeta({ layout: false })
 
 <style lang="scss" module>
 @use '~/assets/scss/mixin' as *;
+
+.header {
+  position: absolute;
+  top     : 0;
+  left    : 0;
+}
+
 .product_list {
   background-color: var(--white);
   padding-bottom: calc(var(--sp-larger) * 2);
