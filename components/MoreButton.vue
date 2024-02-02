@@ -1,37 +1,32 @@
+<script lang="ts" setup>
+const props = defineProps<{ path: string }>()
+</script>
+
 <template>
-  <div :class="$style.more_button_container">
-    <a
-      :class="$style.more_button"
-      href="#"
-    >
-      MORE
-    </a>
-  </div>
+  <NuxtLink
+    :class="$style.more_button"
+    :to="path"
+  >
+    MORE
+  </NuxtLink>
 </template>
 
 <style lang="scss" module>
-
-.more_button_container {
-  width     : 100%;
-  text-align: end;
-}
-
 .more_button {
   color              : var(--black);
   font-size          : var(--fs-smaller);
-  border             : 1px solid var(--black);
+  box-shadow         : 0 0 0 1px var(--black);
   text-align         : center;
-  line-height        : 46px;
-  width              : 162px;
+  width              : calc(var(--bv) * 20);
+  padding            : var(--sp-medium);
   background         : url(assets/images/button-arrow@2x.png) no-repeat;
   background-size    : 7px 12px;
-  background-position: 140px 50%;
-  margin-top         : 40px;
+  background-position: right var(--sp-medium) center;
+  transition         : all .5s;
 
   &:hover {
     background-color: var(--black);
     color           : var(--white);
-    transition      : all 0.5s;
   }
 }
 </style>

@@ -5,6 +5,6 @@ const productList = await fetch('/json/product.json').then(res => res.json())
 <template>
   <section>
     <SectionTitle sectionName="PRODUCT" />
-    <ProductPage :productList="productList" />
+    <ProductList :productList="productList" />
   </section>
 </template>

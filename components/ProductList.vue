@@ -1,26 +1,19 @@
 <script lang="ts" setup>
-type Props = {
-  productList: {
+const props = defineProps<{
+  products: {
     image: string,
     name: string,
     link: string
   }[],
   limit?: number
-}
-
-const props = defineProps<Props>()
-
-// limit が設定されていれば、その数だけニュースを表示する
-const displayedProducts = computed(() => {
-  return props.limit ? props.productList.slice(0, props.limit) : props.productList
-})
+}>()
 </script>
 
 <template>
   <div :class="$style.product_container">
     <ul :class="$style.product_list">
       <li
-        v-for="product in displayedProducts"
+        v-for="product in products"
         :key="product.name"
         :class="$style.product_list_item"
       >

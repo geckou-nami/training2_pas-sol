@@ -32,7 +32,7 @@ $minViewport: 740;
   // FONT
   --fs-medium            : #{calcClamp(14, 16, $minViewport, $maxViewport)};
   --fs-large             : #{calcClamp(16, 18, $minViewport, $maxViewport)};
-  --fs-larger            : #{calcClamp(18, 22, $minViewport, $maxViewport)};
+  --fs-larger            : #{calcClamp(36, 44, $minViewport, $maxViewport)};
   --fs-max               : #{calcClamp(20, 28, $minViewport, $maxViewport)};
   --fs-small             : #{calcClamp(12, 14, $minViewport, $maxViewport)};
   --fs-smaller           : #{calcClamp(11, 12, $minViewport, $maxViewport)};
@@ -48,8 +48,9 @@ $minViewport: 740;
   // VALUE
   --bv                   : #{calcClamp(6, 8, $minViewport, $maxViewport)};
   --sp                   : #{calcClamp(6, 8, $minViewport, $maxViewport)};
-  --sp-larger            : calc(var(--sp) * 8);
   --sp-large             : calc(var(--sp) * 4);
+  --sp-larger            : calc(var(--sp) * 8);
+  --sp-max               : calc(var(--sp) * 16);
   --sp-medium            : calc(var(--sp) * 2);
   --sp-small             : var(--sp);
   --sp-min               : calc(var(--sp) / 2);
@@ -59,6 +60,7 @@ $minViewport: 740;
   --tablet-lower-width   : 740px;
   --desktop-lower-width  : 980px;
   --contents-max-width   : 1440px;
+  --section-max-width    : 786px;
   --global-header-height : calc(var(--bv) * 8);
   --global-sub-nav-height: calc(var(--bv) * 6);
   --z-index-max          : 100;
