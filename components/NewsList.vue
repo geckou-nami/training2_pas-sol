@@ -1,44 +1,36 @@
 <script lang="ts" setup>
-type Props = {
-  newsList: {
+const props = defineProps<{
+  news: {
     image: string,
     title: string,
     date: string,
     text: string,
     link: string
   }[],
-  limit?: number
-}
-
-const props = defineProps<Props>()
-
-// limit が設定されていれば、その数だけニュースを表示する
-const displayedNews = computed(() => {
-  return props.limit ? props.newsList.slice(0, props.limit) : props.newsList
-})
+}>()
 </script>
 
 <template>
   <ul :class="$style.news_container">
     <li 
-      v-for="news in displayedNews"
-      :key="news.title"
+      v-for="item in news"
+      :key="item.title"
       :class="$style.news_article_wrapper"
     >
       <div :class="$style.image_box">
         <img 
-          :src="`/images/news/${news.image}`"
+          :src="`/images/news/${item.image}`"
           alt="記事の関連写真"
           :class="$style.news_img"
         >
       </div>
       <div :class="$style.news_article">
         <h3 :class="$style.news_title">
-          {{ news.title }}
+          {{ item.title }}
         </h3>
-        <date>{{ news.date }}</date>
+        <date>{{ item.date }}</date>
         <p :class="$style.news_text">
-          {{ news.text }}
+          {{ item.text }}
         </p>
       </div>
     </li>

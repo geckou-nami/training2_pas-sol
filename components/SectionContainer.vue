@@ -1,6 +1,6 @@
 <template>
-  <section>
-    <div :class="$style.section_container">
+  <section :class="$style.section_container">
+    <div>
       <slot />
     </div>
   </section>
@@ -9,8 +9,12 @@
 <style lang="scss" module>
 @use '~/assets/scss/mixin' as *;
 .section_container {
-  max-width : 786px;
-  padding   : 0 7%;
-  margin    : 0 auto;
+  width: 100%;
+
+  > div {
+    max-width: var(--section-max-width);
+    padding  : var(--sp-max) var(--sp-large);
+    margin   : 0 auto;
+  }
 }
 </style>
