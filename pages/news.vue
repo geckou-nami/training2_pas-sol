@@ -1,10 +1,13 @@
 <script lang="ts" setup>
-const newsList = await fetch('/json/news.json').then(res => res.json())
+const news = await fetch('/json/news.json').then(res => res.json())
 </script>
 
 <template>
-  <section>
-    <SectionTitle sectionName="NEWS" />
-    <NewsList :newsList="newsList" />
-  </section>
+  <div>
+    <SectionHeader style="margin-block-end: var(--sp-larger);">
+      <h1>NEWS</h1>
+    </SectionHeader>
+    <NewsList :news="news" />
+  </div>
 </template>
+

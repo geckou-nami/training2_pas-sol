@@ -7,7 +7,7 @@
       <slot />
       <BackButton />
     </SectionContainer>
-    <FooterPage />
+    <GlobalFooter />
   </main>
 </template>
 

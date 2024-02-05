@@ -1,10 +1,12 @@
 <script lang="ts" setup>
-const productList = await fetch('/json/product.json').then(res => res.json())
+const products = await fetch('/json/product.json').then(res => res.json())
 </script>
 
 <template>
-  <section>
-    <SectionTitle sectionName="PRODUCT" />
-    <ProductList :productList="productList" />
-  </section>
+  <div>
+    <SectionHeader style="margin-block-end: var(--sp-larger);">
+      <h1>PRODUCT</h1>
+    </SectionHeader>
+    <ProductList :products="products" />
+  </div>
 </template>

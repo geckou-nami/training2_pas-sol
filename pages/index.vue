@@ -64,7 +64,7 @@ definePageMeta({ layout: false })
       </SectionHeader>
       <NewsList :news="news.slice(0, 3)" />
     </SectionContainer>
-    <FooterPage />
+    <GlobalFooter />
   </div>
 </template>
 
